@@ -1,32 +1,31 @@
 
 
-## API Bağlantıları
-Api deneme amaçlı olduğu için herhangi bir token belirtecine gerek yoktur.
+## API Links
+There is no need for any token tokens as the api is for trial purposes.
 
 
-# Yol Üzeri İstasyonlara Erişim
-Yol üzerindeki en yakın istasyonların verisini döndürür.
-Sıralama yukarıdan aşağı şeklindedir.
+# Access to On-Road Stations
+Returns the data of the nearest stations on the route.
 
 ```http
   POST https://sarjagi.com/api/brand/onroad
 ```
 
-### Parametreler (application/json şeklinde)
+### Parameters (application/json)
 ```json
   {
-    "locationIn" : [ //başlangıç konumu
+    "locationIn" : [ //start location
         41.750115, //lat
         26.655103 //long
     ],
-    "locationOut" : [ //bitiş konumu
+    "locationOut" : [ //end location
         39.6829002, //lat
         34.4581702 //long
     ]
 }
 ```
 
-### Çıktı
+### Response
 ```json
 [
     {
@@ -91,17 +90,17 @@ Sıralama yukarıdan aşağı şeklindedir.
 
 
 
-# Tüm İstasyonlara Erişim
-Sunucumuzda kayıtlı tüm güncel istasyonları döndürür.
+# Access to All Stations
+Returns all current stations stored on our server.
 ```http
   GET /api/brand/all
 ```
 
-# Yakın İstasyonlara Erişim
-Belirtilmiş konuma en yakın istasyonları döndürür.
-#### lg = boylam / longitude
-#### lt = enlem / latiude
-#### distance = metre bazında yarıçap
+# Access to Nearby Stations
+Returns the stations closest to the specified location.
+#### lg = longitude
+#### lt = latiude
+#### distance = radius in meters
 
 ```http
   GET /api/brand/near?lg=32.661659&lt=40.467954&distance=1000
