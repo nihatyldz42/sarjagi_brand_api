@@ -93,7 +93,7 @@ Returns the data of the nearest stations on the route.
 # Access to All Stations
 Returns all current stations stored on our server.
 ```http
-  GET /api/brand/all
+  GET  https://sarjagi.com/api/brand/all
 ```
 
 # Access to Nearby Stations
@@ -103,7 +103,7 @@ Returns the stations closest to the specified location.
 #### distance = radius in meters
 
 ```http
-  GET /api/brand/near?lg=32.661659&lt=40.467954&distance=1000
+  GET  https://sarjagi.com/api/brand/near?lg=32.661659&lt=40.467954&distance=1000
 ```
 
 
